@@ -1,7 +1,7 @@
 import re
 
-def read_file(filename):
-    with open(filename, 'r', encoding='utf-8') as file:
+def read_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
 
@@ -15,8 +15,15 @@ def count_sentences(text):
     return len([s for s in sentences if s])
 
 
-def count_words_and_sentences(filename):
-    text = read_file(filename)
-    words_count = count_words(text)
-    sentences_count = count_sentences(text)
+def count_words_and_sentences(file_path):
+    text = read_file(file_path)
+    _words_count = count_words(text)
+    _sentences_count = count_sentences(text)
     return words_count, sentences_count
+
+
+if __name__ == "__main__":
+    filename = r"D:\univ\CI.CDLabs\mkr1\example_text.txt"
+    words_count, sentences_count = count_words_and_sentences(filename)
+    print(f"Кількість слів: {words_count}")
+    print(f"Кількість речень: {sentences_count}")
