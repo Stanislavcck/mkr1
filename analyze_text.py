@@ -13,3 +13,10 @@ def count_words(text):
 def count_sentences(text):
     sentences = re.split(r'(?<=[.!?])\s+|\.\.\.', text.strip())
     return len([s for s in sentences if s])
+
+
+def count_words_and_sentences(filename):
+    text = read_file(filename)
+    words_count = count_words(text)
+    sentences_count = count_sentences(text)
+    return words_count, sentences_count
