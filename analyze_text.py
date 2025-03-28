@@ -5,3 +5,6 @@ def read_file(filename):
         return file.read()
 
 
+def count_words(text):
+    words = re.split(r'[ ,:;]+', text.strip())
+    return len([word for word in words if word])
