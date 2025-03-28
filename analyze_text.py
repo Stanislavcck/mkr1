@@ -19,7 +19,7 @@ def count_words_and_sentences(file_path):
     text = read_file(file_path)
     _words_count = count_words(text)
     _sentences_count = count_sentences(text)
-    return words_count, sentences_count
+    return _words_count, _sentences_count
 
 
 if __name__ == "__main__":
